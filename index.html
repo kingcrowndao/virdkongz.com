@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+  
+      
+      <!-- Custom styles for this template -->
+      <link href="carousel.css" rel="stylesheet">
+      <link href="timeline.css" rel="stylesheet">
+      <link href="team.css" rel="stylesheet">
+      <link href="bootstrap.css" rel="stylesheet">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<style>
+  @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');} body, h1, h2, h3, h4, h5, h6, input, textarea, select { font-family: 'Noto Sans KR', sans-serif; }
+</style>
+      <title>VirdKongz</title>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#home">VirdKongz</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#nft">소개</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#coin">Kongz 코인</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#marketplace">NFT 거래소</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#roadmap">로드맵</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#team">팀</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#faq">FAQ</a>
+                </li>
+              </ul>
+              <form class="d-flex">
+                <a class="btn btn-outline-success" onClick="alert('사전 민팅 페이지는 곧 공개됩니다.');">사전 민팅</a>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+      <main id="home">
+      
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner" style="text-shadow: 0 0 5px #000;">
+            <div class="carousel-item active">
+              <img class="bd-placeholder-img" width="100%" height="100%" src="banner1.jpg" style="object-fit: cover;">
+      
+              <div class="container">
+                <div class="carousel-caption text-start">
+                  <h1>홀더의 가치 상승</h1>
+                  <p>우리는 홀더의 가치 상승을 최우선합니다. 자부심을 느끼도록 만드는 것입니다.</p>
+                  <p><a class="btn btn-lg btn-primary"  onClick="alert('오픈씨 주소는 민팅 후 공개됩니다.');">오픈씨</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="bd-placeholder-img" width="100%" height="100%" src="banner2.jpg" style="object-fit: cover;">
+      
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>지속 가능한 모델</h1>
+                  <p>우리는 민팅에서 그치는 단기적인 모델이 아니라, 지속 가능한 모델을 제시합니다.</p>
+                  <p><a class="btn btn-lg btn-primary" href="https://twitter.com/virdkongz" target="_blank">트위터</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="bd-placeholder-img" width="100%" height="100%" src="banner3.jpg" style="object-fit: cover;">
+      
+              <div class="container">
+                <div class="carousel-caption text-end">
+                  <h1>커뮤니티 기반</h1>
+                  <p>우리의 힘은 커뮤니티로부터 나옵니다. 커뮤니티와 함께합니다.</p>
+                  <p><a class="btn btn-lg btn-primary" href="https://open.kakao.com/o/gAB6ccQd" target="_blank">카카오톡</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      
+      
+        <!-- Marketing messaging and featurettes
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+      
+        <div class="container marketing">
+      
+          <!-- Three columns of text below the carousel -->
+          <div class="row">
+            <div class="col-lg-4">
+              <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="top1.jpg">
+      
+              <h2>채굴 가능</h2>
+              <p>세계 최초로 민팅 즉시 채굴이 가능한 NFT!</p>
+              <p><a class="btn btn-secondary" href="#coin">Kongz 코인 &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="top2.jpg">
+      
+              <h2>생태계 확장</h2>
+              <p>5개 이상의 프로젝트가 이미 론칭 전 협력중!</p>
+              <p><a class="btn btn-secondary" href="https://twitter.com/virdkongz" target="_blank">트위터 &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+              <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="top3.jpg">
+      
+              <h2>메타버스</h2>
+              <p>메타콩즈와 함께 'K-NFT 세계화' 메타버스로!</p>
+              <p><a class="btn btn-secondary" href="#roadmap">로드맵 &raquo;</a></p>
+            </div><!-- /.col-lg-4 -->
+          </div><!-- /.row -->
+      
+      
+          <!-- START THE FEATURETTES -->
+      
+          <hr class="featurette-divider">
+      
+          <div class="row featurette" id="nft">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">당신의 가치를 올려줄, <span class="text-muted">Vird Kongz NFT Project</span></h2>
+              <p class="lead">Vird Kongz는 10,000마리의 각기 다른 매력을 지닌 고부가 가치 PFP NFT 콩즈입니다.
+                모든 콩즈는 다 멋지지만 Vird Kongz는 지구상에서 가장 멋지고 강한 콩즈일 것입니다! 🐒
+                
+                Vird Kongz의 주인이 되어 당신의 가치를 높여보세요.</p>
+                <p><a class="btn btn-lg btn-primary"  onClick="alert('오픈씨 주소는 민팅 후 공개됩니다.');">오픈씨</a></p>
+            </div>
+            <div class="col-md-5">
+              <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" src="image1.jpg">
+      
+            </div>
+          </div>
+      
+          <hr class="featurette-divider">
+      
+          <div class="row featurette" id="coin">
+            <div class="col-md-7 order-md-2">
+              <h2 class="featurette-heading">Defi Empowerment, <span class="text-muted">Kongz Coin</span></h2>
+              <p class="lead">Klaytn 체인에서 이용 가능한 탈중앙화 준비 통화 프로토콜입니다. 각 Kongz 토큰은 Kongz 금고 안에 있는 여러 자산(예: KDAI, KONGZ-KDAI LP 토큰 등)의 묶음들로 부터 지지되며, 아래로 떨어지지 않는 내재 가치를 부여합니다. 또한, 스테이킹(Staking)과 민팅(Minting)을 통해 시장에 고유한 경제 구조와 게임 이론에 근거한 다이내믹을 제안하며, Vird Kongz NFT로부터 채굴 가능합니다.</p>
+              <p><a class="btn btn-lg btn-primary"  onClick="alert('민팅 전 클레이스왑에 상장합니다.');">Klayswap</a></p>
+            </div>
+            <div class="col-md-5 order-md-1">
+              <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" src="image2.jpg">
+      
+            </div>
+          </div>
+      
+          <hr class="featurette-divider">
+      
+          <div class="row featurette" id="marketplace">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">Beyond a NFT Marketplace, <span class="text-muted">KongzStore</span></h2>
+              <p class="lead">다양한 NFT 홀더들과 소통하는 NFT 마켓 플레이스로, 프로젝트 정보를 공유하고 거래할 수 있습니다. KLAY로 거래하며 수수료는 단 1%입니다. (오픈씨 2.5%)</p>
+              <p><a class="btn btn-lg btn-primary"  onClick="alert('준비중입니다.');">바로가기</a></p>
+            </div>
+            <div class="col-md-5">
+              <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" role="img" src="image3.jpg">
+      
+            </div>
+          </div>
+      
+          <hr class="featurette-divider">
+      
+          <!-- /END THE FEATURETTES -->
+
+        <section id="roadmap" class="timeline_area section_padding_130">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-8 col-lg-6">
+                        <!-- Section Heading-->
+                        <div class="section_heading text-center">
+                            <h6>로드맵</h6>
+                            <h3>우리는 실현 가능한 로드맵을 제시합니다.</h3>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Timeline Area-->
+                        <div class="apland-timeline-area">
+                            <!-- Single Timeline Content-->
+                            <div class="single-timeline-area">
+                                <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                    <p>10-30%</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                            <div class="timeline-icon"><i class="fa fa-address-card" aria-hidden="true"></i></div>
+                                            <div class="timeline-text">
+                                                <h6>Kongz 채굴</h6>
+                                                <p>민팅이 끝나는 즉시 Kongz 코인 채굴을 시작한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                            <div class="timeline-icon"><i class="fa fa-archive" aria-hidden="true"></i></div>
+                                            <div class="timeline-text">
+                                                <h6>코인 상장</h6>
+                                                <p>코인을 Klayswap에 상장하고 코인 생태계를 구축한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                            <div class="timeline-icon"><i class="fa fa-address-book" aria-hidden="true"></i></div>
+                                            <div class="timeline-text">
+                                                <h6>완판 기념 광고</h6>
+                                                <p>뉴욕 타임스퀘어 광고판에 ‘완판 기념’ 광고를 한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Timeline Content-->
+                            <div class="single-timeline-area">
+                                <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                    <p>40-60%</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                            <div class="timeline-icon"><i class="fa fa-briefcase" aria-hidden="true"></i></div>
+                                            <div class="timeline-text">
+                                                <h6>거버넌스 추가</h6>
+                                                <p>거버넌스 기능을 홈페이지에 추가한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                            <div class="timeline-icon"><i class="fa fa-desktop" aria-hidden="true"></i></div>
+                                            <div class="timeline-text">
+                                                <h6>NFT 거래소 출시</h6>
+                                                <p>NFT 거래소를 출시한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                            <div class="timeline-icon"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
+                                            <div class="timeline-text">
+                                                <h6>생태계 확장</h6>
+                                                <p>코인 생태계에 최소 5개 프로젝트를 추가한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Timeline Content-->
+                            <div class="single-timeline-area">
+                                <div class="timeline-date wow fadeInLeft" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                  <p>70-100%</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                            <div class="timeline-icon"><i class="fa fa-id-card" aria-hidden="true"></i></div>
+                                            <div class="timeline-text">
+                                                <h6>메타버스 진출</h6>
+                                                <p>샌드박스, 디센트럴랜드, 크립토복셀 메타버스의 땅을 구입한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                                            <div class="timeline-icon"><i class="fa fa-desktop" aria-hidden="true"></i></div>
+                                            <div class="timeline-text">
+                                                <h6>협업 제안</h6>
+                                                <p>MetaKongz 에게 협업 제안 이메일을 발송한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="single-timeline-content d-flex wow fadeInLeft" data-wow-delay="0.7s" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInLeft;">
+                                            <div class="timeline-icon"><i class="fa fa-picture-o" aria-hidden="true"></i></div>
+                                            <div class="timeline-text">
+                                                <h6>샌드박스 게임 제작</h6>
+                                                <p>샌드박스에 복셀 아바타와 게임 개발을 시작한다.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center mt-5 mb-2">
+                <h1 class="mb-0">혹성탈출!</h1><span>메타콩즈 와 함께 'K-NFT 세계화' 메타버스로</span>
+            </div>
+        </section>
+        <hr class="featurette-divider">
+
+        <div id="team" class="container text-center mt-5 mb-2">
+            <h1 class="mb-0">최고의 팀</h1><span>이 모든것을 실현시킬 최고의 팀을 만나보세요!</span>
+        </div>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="nft/image/0.jpg" width="90">
+                        <h5 class="mt-3 name">KONGGazima</h5><span class="work d-block">CEO</span>
+                        <div class="mt-4 about"><span>그는 블록체인 업계에 오랜 시간 일한 사람으로 콩에 진심입니다. 콩까지마!</span></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="nft/image/1.jpg" width="90">
+                        <h5 class="mt-3 name">Sphinx</h5><span class="work d-block">Smart Contract Developer</span>
+                        <div class="mt-4 about"><span>그는 S대 출신의 개발자로 업계 개발 경력이 오래됐습니다. 버드콩즈에 올인한다고 합니다.</span></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="nft/image/2.jpg" width="90">
+                        <h5 class="mt-3 name">KONG Paradise</h5><span class="work d-block">Smart Contract Developer</span>
+                        <div class="mt-4 about"><span>Sphinx와 동창인 그는 해외 프로젝트에 많이 참여했습니다. 외국어에 능통합니다.</span></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="nft/image/3.jpg" width="90">
+                        <h5 class="mt-3 name">Pang</h5><span class="work d-block">Web Developer</span>
+                        <div class="mt-4 about"><span>최고의 웹 개발자가 되기위해 매일같이 공부하는 그는 열정이 가득합니다.</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3">
+                  <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="nft/image/4.jpg" width="90">
+                        <h5 class="mt-3 name">Samuel</h5><span class="work d-block">Server Developer</span>
+                        <div class="mt-4 about"><span>그는 동시에 1만개의 민팅을 하더라도 문제가 없도록 최고의 기술력을 갖추고 있습니다.</span></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="nft/image/5.jpg" width="90">
+                        <h5 class="mt-3 name">KONG Nemaste</h5><span class="work d-block">Art & Design</span>
+                        <div class="mt-4 about"><span>그는 해외 명문대에서 디자인 과정을 공부하고 있는 모던 디자이너입니다.</span></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="nft/image/6.jpg" width="90">
+                        <h5 class="mt-3 name">Droid</h5><span class="work d-block">Marketing & CS</span>
+                        <div class="mt-4 about"><span>그는 홍보팀 경력을 살려 활발한 에너지로 커뮤니티를 관리하고 있습니다.</span></div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="nft/image/7.jpg" width="90">
+                        <h5 class="mt-3 name">Yiruma</h5><span class="work d-block">Marketing & CS</span>
+                        <div class="mt-4 about"><span>그는 팀의 다양한 아이디어를 혼합하여 구체적인 국내/국외 마케팅 전략을 수립합니다.</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+
+        <div class="faq_area section_padding_130" id="faq">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-12 col-sm-8 col-lg-6">
+                      <!-- Section Heading-->
+                      <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                          <h3>FAQ</h3>
+                          <p>궁금하신 내용을 이곳에서 확인하세요.</p>
+                          <div class="line"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row justify-content-center">
+                  <!-- FAQ Area-->
+                  <div class="col-12 col-sm-10 col-lg-8"><div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingZero">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
+                          민팅은 언제 시작하나요?
+                        </button>
+                      </h2>
+                      <div id="collapseZero" class="accordion-collapse collapse show" aria-labelledby="headingZero" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          곧 사전 민팅이 시작되오며, 민팅 일자는 추후 공지하겠습니다!
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                          한정판 NFT가 존재하나요?
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          네 존재합니다! 한정판 NFT는 추후 에어드롭 이벤트로 제공합니다!
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          코인 채굴시 NFT마다 차이가 있나요?
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          차이가 없습니다! 모든 NFT가 동일하게 채굴을 합니다.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          한정판 NFT도 채굴이 되나요?
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          네 됩니다! 당연히 되야죠!
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      <!-- Support Button-->
+                      <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                          <i class="lni-emoji-sad"></i>
+                          <p class="mb-0 px-2">답변을 찾지 못했나요?</p>
+                          <a href="https://open.kakao.com/o/gAB6ccQd" target="_blank">카카오톡 입장</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+        <hr class="featurette-divider">
+      
+        </div><!-- /.container -->
+      
+      
+        <!-- FOOTER -->
+        <footer class="container">
+          <p class="float-end"><a href="#">위로</a></p>
+          <p>&copy; 2021 Vird Kongz &middot; <a href="https://twitter.com/virdkongz" target="_blank">트위터</a> &middot; <a href="https://open.kakao.com/o/gAB6ccQd" target="_blank">카카오톡</a></p>
+        </footer>
+      </main>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
