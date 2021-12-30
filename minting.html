@@ -47,8 +47,8 @@
       <h3 class="float-md-start mb-0">Vird Kongz 민팅</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="#">사전 민팅</a>
-        <a class="nav-link" onClick="alert('민팅은 1월 10일부터 진행됩니다.');">민팅하기</a>
-        <a class="nav-link" onClick="alert('오픈씨 주소는 민팅 후 공개됩니다.');">오픈씨</a>
+        <a class="nav-link" href="#" onClick="alert('민팅은 1월 10일부터 진행됩니다.');">민팅하기</a>
+        <a class="nav-link" href="#" onClick="alert('오픈씨 주소는 민팅 후 공개됩니다.');">오픈씨</a>
       </nav>
     </div>
   </header>
@@ -56,15 +56,15 @@
   <main class="px-3">
     <h1>Vird Kongz 사전 민팅</h1>
     <p class="lead">사전 민팅가는 65 KLAY로 5 KLAY가 할인된 가격으로 민팅할 수 있습니다.</p>
-    <p class="lead">당신의 총 사전 민팅 수: 0</p>
+    <p class="lead">당신의 총 사전 민팅 수: <span id="minting_count"></span></p>
     <p class="lead">
       <input type="number" class="form-control" id="countInput" placeholder="개수 (기본 1개, 한번에 최대 10개)">
     </p>
     <p class="lead">
-      <input type="number" class="form-control" id="codeInput" placeholder="추천인 코드 (없으면 빈칸)">
+      <input class="form-control" id="codeInput" placeholder="추천인 코드 (없으면 빈칸)">
     </p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">사전 민팅</a>
+      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white" onclick="premint()">사전 민팅</a>
     </p>
     <p class="lead">추천인 코드를 생성하시고, 다른 사람들이 당신의 추천인 코드로 사전 민팅을 수행하면 최대 50명까지 특수 NFT를 증정합니다.</p>
     <p class="lead">
@@ -79,6 +79,6 @@
 
 
     
-<script>get_balance()</script>
+<script>window.init = () => get_premint_balance()</script>
   </body>
 </html>

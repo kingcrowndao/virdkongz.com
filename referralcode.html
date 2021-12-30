@@ -27,37 +27,21 @@
     <h1>
       Vird Kongz 추천인 코드 생성과 랭킹
     </h1>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">추천인 코드 생성</button>
+    <p class="lead">추천인 코드를 생성하시고, 다른 사람들이 당신의 추천인 코드로 사전 민팅을 수행하면 최대 50명까지 특수 NFT를 증정합니다.</p>
+    <p class="lead"><button class="btn btn-outline-success my-2 my-sm-0" onclick="make_code()">추천인 코드 생성</button></p>
     <table class="table">
       <thead>
         <tr>
           <th scope="col">랭킹</th>
           <th scope="col">추천인 코드</th>
-          <th scope="col">지갑 주소</th>
+          <th scope="col">코드 생성자 지갑 주소</th>
           <th scope="col">사용 수</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+      <tbody id="list">
       </tbody>
-    </table></main>
-    <script>get_ranking()</script>
+    </table>
+    <div id="loading">로딩중...</div></main>
+    <script>window.init = () => get_ranking()</script>
   </body>
 </html>
