@@ -365,16 +365,20 @@ async function get_premint_balance() {
 }
 
 async function premint() {
-  var count = parseInt($("#countInput").val());
-  count = isNaN(count) === true ? 1 : count;
-  if (count > 10) {
-    alert("한번에 최대 10개만 민팅 가능합니다.");
+  if (await premint_contract.methods.limit().call() === "0") {
+    alert("사전 민팅 진행중이 아닙니다.");
   } else {
-    await premint_contract.methods.mint(count, $("#codeInput").val()).send({ from: wallet_address, gas: 1500000, value: (65 * count) + "000000000000000000" });
-    setTimeout(() => {
-      alert("사전 민팅이 완료되었습니다.");
-      location.reload();
-    }, 2000);
+    var count = parseInt($("#countInput").val());
+    count = isNaN(count) === true ? 1 : count;
+    if (count > 10) {
+      alert("한번에 최대 10개만 민팅 가능합니다.");
+    } else {
+      await premint_contract.methods.mint(count, $("#codeInput").val()).send({ from: wallet_address, gas: 1500000, value: (65 * count) + "000000000000000000" });
+      setTimeout(() => {
+        alert("사전 민팅이 완료되었습니다.");
+        location.reload();
+      }, 2000);
+    }
   }
 }
 
