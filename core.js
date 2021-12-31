@@ -361,6 +361,7 @@ var premint_contract = new caver.klay.Contract([
 ], "0x9362d5C13dBC079443b4F91853EA886C648D8670");
 
 async function get_premint_balance() {
+  $("#total_minting_count").text(await premint_contract.methods.totalSupply().call());
   $("#minting_count").text(await premint_contract.methods.balances(wallet_address).call());
 }
 
