@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Vird Kongz 스테이킹 시스템</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<style>
+  @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');} @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');} body, h1, h2, h3, h4, h5, h6, input, textarea, select { font-family: 'Noto Sans KR', sans-serif; }
+  body > .container {
+  padding: 60px 15px 0;
+}
+</style>
+<script src="jquery.min.js"></script>
+<script src="staking.js"></script>
+  </head>
+  <body>
+    <main role="main" class="container">
+    <h1>
+        Vird Kongz 스테이킹 시스템
+    </h1>
+    <p class="lead">KONGZ COIN을 예치하고, 추후 Vird Kongz의 컨텐츠를 사용할 때 필요한 BANANA COIN을 받으세요.</p>
+    <p class="lead">
+        <ul>
+            <li>KONGZ COIN 주소: 0x2CAcF8Eb48f609D7Dce06A4e4F9FF4C22563eb62</li>
+            <li>BANANA COIN 주소: 0xa8A9132E9039dcA3b4394aBD7e892761A592f35e</li>
+          </ul>
+      </p><p class="lead">
+        <ul>
+            <li>현재 클레이튼 블록: <span id="block"></span></li>
+            <li>당신의 KONGZ COIN: <span id="kongz"></span></li>
+            <li>당신의 BANANA COIN: <span id="banana"></span></li>
+            <li>총 출금 가능한 BANANA: <span id="all"></span></li>
+        </ul>
+    </p>
+    <p class="lead">
+        <button class="btn btn-outline-success my-2 my-sm-0" onclick="approve()">KONGZ COIN 승인하기</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" onclick="staking()">KONGZ COIN 예치하기</button>
+        <button class="btn btn-outline-success my-2 my-sm-0" onclick="claim_all()">모든 BANANA 출금하기</button>
+    </p>
+    <table class="table">
+      <thead>
+        <tr>
+            <th scope="col">시작 블록</th>
+            <th scope="col">종료 블록</th>
+          <th scope="col">예치액</th>
+          <th scope="col">출금 가능한 BANANA COIN</th>
+          <th scope="col">BANANA 얻기</th>
+          <th scope="col">예치 그만두기</th>
+        </tr>
+      </thead>
+      <tbody id="list">
+      </tbody>
+    </table>
+    <div id="loading">로딩중...</div></main>
+
+    <footer class="container">
+      <p>스테이킹 시스템 제공 by <a href="https://virdkongz.com/" target="_blank" >Vird Kongz</a>.</p>
+    </footer>
+    <script>window.init = () => get_stakings()</script>
+  </body>
+</html>
