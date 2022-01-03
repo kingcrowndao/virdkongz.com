@@ -1628,6 +1628,9 @@ async function staking() {
 
     var kongz = await kongz_contract.methods.balanceOf(wallet_address).call();
     $("#kongz").append(caver.utils.fromPeb(kongz));
+  
+    var staked = await kongz_contract.methods.balanceOf("0x3D1dfd01b5e3Ca0a85C1E25248a2e8FEE5345D59").call();
+    $("#staked").append(caver.utils.fromPeb(staked));
 
     var banana = await banana_contract.methods.balanceOf(wallet_address).call();
     $("#banana").append(caver.utils.fromPeb(banana));
