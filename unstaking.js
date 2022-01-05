@@ -1305,280 +1305,431 @@ var kongz_contract = new caver.klay.Contract([
         "name": "Approval",
         "type": "event"
       }
-    ], "0xF6a6Fc906B38eab8C9EB3a0ba9606262704aF091");
+    ], "0xa8A9132E9039dcA3b4394aBD7e892761A592f35e");
 
-var staking_contract = new caver.klay.Contract([
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "kongz",
-      "outputs": [
+    var staking_contract = new caver.klay.Contract([
         {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "",
-          "type": "address"
+          "constant": true,
+          "inputs": [],
+          "name": "kongz",
+          "outputs": [
+            {
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
         },
         {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "stakings",
-      "outputs": [
-        {
-          "name": "amount",
-          "type": "uint256"
+          "constant": true,
+          "inputs": [
+            {
+              "name": "",
+              "type": "address"
+            },
+            {
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "name": "stakings",
+          "outputs": [
+            {
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "name": "startBlock",
+              "type": "uint256"
+            },
+            {
+              "name": "lock",
+              "type": "uint256"
+            },
+            {
+              "name": "lastClaimBlock",
+              "type": "uint256"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
         },
         {
-          "name": "startBlock",
-          "type": "uint256"
+          "constant": true,
+          "inputs": [
+            {
+              "name": "who",
+              "type": "address"
+            }
+          ],
+          "name": "stakingCount",
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
         },
         {
-          "name": "lock",
-          "type": "uint256"
+          "constant": false,
+          "inputs": [
+            {
+              "name": "id",
+              "type": "uint256"
+            }
+          ],
+          "name": "withdraw",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
         },
         {
-          "name": "lastClaimBlock",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "who",
-          "type": "address"
-        }
-      ],
-      "name": "stakingCount",
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "id",
-          "type": "uint256"
-        }
-      ],
-      "name": "withdraw",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "amount",
-          "type": "uint256"
+          "constant": false,
+          "inputs": [
+            {
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "name": "lock",
+              "type": "uint256"
+            }
+          ],
+          "name": "staking",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
         },
         {
-          "name": "lock",
-          "type": "uint256"
-        }
-      ],
-      "name": "staking",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "id",
-          "type": "uint256"
-        }
-      ],
-      "name": "claim",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "who",
-          "type": "address"
-        }
-      ],
-      "name": "claimableAll",
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "who",
-          "type": "address"
+          "constant": false,
+          "inputs": [
+            {
+              "name": "id",
+              "type": "uint256"
+            }
+          ],
+          "name": "claim",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
         },
         {
-          "name": "id",
-          "type": "uint256"
-        }
-      ],
-      "name": "claimable",
-      "outputs": [
-        {
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [],
-      "name": "renounceOwnership",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "owner",
-      "outputs": [
-        {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "isOwner",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "banana",
-      "outputs": [
-        {
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [],
-      "name": "claimAll",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "name": "newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "transferOwnership",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "name": "_kongz",
-          "type": "address"
+          "constant": true,
+          "inputs": [
+            {
+              "name": "who",
+              "type": "address"
+            }
+          ],
+          "name": "claimableAll",
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
         },
         {
-          "name": "_banana",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "name": "previousOwner",
-          "type": "address"
+          "constant": true,
+          "inputs": [
+            {
+              "name": "who",
+              "type": "address"
+            },
+            {
+              "name": "id",
+              "type": "uint256"
+            }
+          ],
+          "name": "claimable",
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
         },
         {
-          "indexed": true,
-          "name": "newOwner",
-          "type": "address"
+          "constant": false,
+          "inputs": [],
+          "name": "renounceOwnership",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "constant": true,
+          "inputs": [],
+          "name": "owner",
+          "outputs": [
+            {
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "constant": true,
+          "inputs": [],
+          "name": "isOwner",
+          "outputs": [
+            {
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "constant": true,
+          "inputs": [],
+          "name": "banana",
+          "outputs": [
+            {
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "constant": false,
+          "inputs": [],
+          "name": "claimAll",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "constant": false,
+          "inputs": [
+            {
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "transferOwnership",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "name": "_kongz",
+              "type": "address"
+            },
+            {
+              "name": "_banana",
+              "type": "address"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
         }
-      ],
-      "name": "OwnershipTransferred",
-      "type": "event"
-    }
-  ], "0x17CFb5164ecd75808F4c369DDc1D5CB1213a7f52");
+      ], "0x3D1dfd01b5e3Ca0a85C1E25248a2e8FEE5345D59");
 
+      var unstaking_contract = new caver.klay.Contract([
+        {
+          "constant": true,
+          "inputs": [],
+          "name": "coin",
+          "outputs": [
+            {
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "constant": false,
+          "inputs": [
+            {
+              "name": "id",
+              "type": "uint256"
+            }
+          ],
+          "name": "cancel",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "constant": true,
+          "inputs": [],
+          "name": "staking",
+          "outputs": [
+            {
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "constant": false,
+          "inputs": [],
+          "name": "renounceOwnership",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "constant": true,
+          "inputs": [],
+          "name": "owner",
+          "outputs": [
+            {
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "constant": true,
+          "inputs": [],
+          "name": "isOwner",
+          "outputs": [
+            {
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "constant": true,
+          "inputs": [
+            {
+              "name": "",
+              "type": "address"
+            },
+            {
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "name": "canceled",
+          "outputs": [
+            {
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "constant": false,
+          "inputs": [
+            {
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "transferOwnership",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "name": "_coin",
+              "type": "address"
+            },
+            {
+              "name": "_staking",
+              "type": "address"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        }
+      ], "0x22B9F6fc8857ce6376A20588C541F8586878E5d9");
+  
 async function approve() {
-    await kongz_contract.methods.approve("0x17CFb5164ecd75808F4c369DDc1D5CB1213a7f52", "115792089237316195423570985008687907853269984665640564039457584007913129639935").send({ from: wallet_address, gas: 1500000 });
+    await kongz_contract.methods.approve("0x3D1dfd01b5e3Ca0a85C1E25248a2e8FEE5345D59", "115792089237316195423570985008687907853269984665640564039457584007913129639935").send({ from: wallet_address, gas: 1500000 });
 }
 
 async function staking() {
-    if ((await kongz_contract.methods.allowance(wallet_address, "0x17CFb5164ecd75808F4c369DDc1D5CB1213a7f52").call()) === "0") {
-        alert("승인을 먼저 해주시기 바랍니다. 승인은 한 번만 하면 됩니다.");        
+    if ((await kongz_contract.methods.allowance(wallet_address, "0x3D1dfd01b5e3Ca0a85C1E25248a2e8FEE5345D59").call()) === "0") {
+        alert("승인을 먼저 해주시기 바랍니다.");        
     } else {
         var amount = prompt("예치할 KONGZ COIN 수량을 입력해주시기 바랍니다.");
         var block = prompt("며칠동안 락업할 예정인가요? 락업 기간이 갈수록 바나나 코인을 많이 얻을 수 있습니다.");
@@ -1620,10 +1771,10 @@ async function staking() {
     for (var i = 0; i < data.length; i += 1) {
       var d = data[i];
       if (d.amount !== "0") {
-      $("#list").append("<tr><td>" + d.startBlock + "</td><td>" + d.endBlock + " (" + Math.ceil((d.endBlock - block) / 86400) + "일 남음)" + "</td><td>" + caver.utils.fromPeb(d.amount) + " KONGZ</td><td>" + caver.utils.fromPeb(d.claimable) + " BANANA</td><td>" +
-      '<button class="btn btn-outline-success my-2 my-sm-0" onclick="claim(' + i + ')">BANANA 얻기</button>' + "</td><td>" +
-       (block > d.endBlock ?
-           '<button class="btn btn-outline-success my-2 my-sm-0" onclick="withdraw(' + i + ')">예치 그만두기</button>' : "") + "</td></tr>");
+        var unstaked = await unstaking_contract.methods.canceled(wallet_address, i).call();
+      $("#list").append("<tr><td>" + caver.utils.fromPeb(d.amount) + " KONGZ</td><td>" +
+       (unstaked !== true ?
+           '<button class="btn btn-outline-success my-2 my-sm-0" onclick="cancel(' + i + ')">되찾기</button>' : "완료") + "</td></tr>");
        }
     }
     $("#loading").remove();
@@ -1633,7 +1784,7 @@ async function staking() {
     var kongz = await kongz_contract.methods.balanceOf(wallet_address).call();
     $("#kongz").append(caver.utils.fromPeb(kongz));
   
-    var staked = await kongz_contract.methods.balanceOf("0x17CFb5164ecd75808F4c369DDc1D5CB1213a7f52").call();
+    var staked = await kongz_contract.methods.balanceOf("0x3D1dfd01b5e3Ca0a85C1E25248a2e8FEE5345D59").call();
     $("#staked").append(caver.utils.fromPeb(staked));
 
     var banana = await banana_contract.methods.balanceOf(wallet_address).call();
@@ -1659,10 +1810,10 @@ async function claim_all() {
       }, 2000);
 }
 
-async function withdraw(id) {
-    await staking_contract.methods.withdraw(id).send({ from: wallet_address, gas: 1500000 });
+async function cancel(id) {
+    await unstaking_contract.methods.cancel(id).send({ from: wallet_address, gas: 1500000 });
     setTimeout(() => {
-        alert("예치를 그만두었습니다.");
+        alert("되찾기 완료");
         location.reload();
       }, 2000);
 }
