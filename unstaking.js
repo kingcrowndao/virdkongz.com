@@ -1755,6 +1755,7 @@ async function staking() {
         var d = await staking_contract.methods.stakings(wallet_address, ii).call();
         var claimable = await staking_contract.methods.claimable(wallet_address, ii).call();
         data.push({
+            id: ii,
             amount : d.amount,
             startBlock : parseInt(d.startBlock),
             endBlock : parseInt(d.startBlock) + parseInt(d.lock),
@@ -1774,7 +1775,7 @@ async function staking() {
         var unstaked = await unstaking_contract.methods.canceled(wallet_address, i).call();
       $("#list").append("<tr><td>" + caver.utils.fromPeb(d.amount) + " KONGZ</td><td>" +
        (unstaked !== true ?
-           '<button class="btn btn-outline-success my-2 my-sm-0" onclick="cancel(' + i + ')">되찾기</button>' : "완료") + "</td></tr>");
+           '<button class="btn btn-outline-success my-2 my-sm-0" onclick="cancel(' + d.id + ')">되찾기</button>' : "완료") + "</td></tr>");
        }
     }
     $("#loading").remove();

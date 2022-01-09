@@ -1604,6 +1604,7 @@ async function staking() {
         var d = await staking_contract.methods.stakings(wallet_address, ii).call();
         var claimable = await staking_contract.methods.claimable(wallet_address, ii).call();
         data.push({
+            id: ii,
             amount : d.amount,
             startBlock : parseInt(d.startBlock),
             endBlock : parseInt(d.startBlock) + parseInt(d.lock),
@@ -1621,9 +1622,9 @@ async function staking() {
       var d = data[i];
       if (d.amount !== "0") {
       $("#list").append("<tr><td>" + d.startBlock + "</td><td>" + d.endBlock + " (" + Math.ceil((d.endBlock - block) / 86400) + "일 남음)" + "</td><td>" + caver.utils.fromPeb(d.amount) + " KONGZ</td><td>" + caver.utils.fromPeb(d.claimable) + " BANANA</td><td>" +
-      '<button class="btn btn-outline-success my-2 my-sm-0" onclick="claim(' + i + ')">BANANA 얻기</button>' + "</td><td>" +
+      '<button class="btn btn-outline-success my-2 my-sm-0" onclick="claim(' + d.id + ')">BANANA 얻기</button>' + "</td><td>" +
        (block > d.endBlock ?
-           '<button class="btn btn-outline-success my-2 my-sm-0" onclick="withdraw(' + i + ')">예치 그만두기</button>' : "") + "</td></tr>");
+           '<button class="btn btn-outline-success my-2 my-sm-0" onclick="withdraw(' + d.id + ')">예치 그만두기</button>' : "") + "</td></tr>");
        }
     }
     $("#loading").remove();
