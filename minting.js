@@ -17,30 +17,16 @@ if (wallet_installed != true) {
     })();
 }
 
-var premint_contract = new caver.klay.Contract([
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "code",
-        "type": "string"
-      }
-    ],
-    "name": "makeCode",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
+var kongz_contract = new caver.klay.Contract([
   {
     "constant": true,
     "inputs": [
       {
-        "name": "",
-        "type": "address"
+        "name": "interfaceId",
+        "type": "bytes4"
       }
     ],
-    "name": "userExists",
+    "name": "supportsInterface",
     "outputs": [
       {
         "name": "",
@@ -49,6 +35,57 @@ var premint_contract = new caver.klay.Contract([
     ],
     "payable": false,
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "name",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getApproved",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "approve",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -66,14 +103,154 @@ var premint_contract = new caver.klay.Contract([
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "transferFrom",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "name": "end",
+        "type": "uint256"
+      }
+    ],
+    "name": "mintMany",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
     "constant": true,
     "inputs": [
       {
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "tokenOfOwnerByIndex",
+    "outputs": [
+      {
         "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "unpause",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "mint",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "safeTransferFrom",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "account",
         "type": "address"
       }
     ],
-    "name": "balances",
+    "name": "isPauser",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "tokenByIndex",
     "outputs": [
       {
         "name": "",
@@ -88,11 +265,11 @@ var premint_contract = new caver.klay.Contract([
     "constant": false,
     "inputs": [
       {
-        "name": "_limit",
-        "type": "uint256"
+        "name": "_baseURI",
+        "type": "string"
       }
     ],
-    "name": "setLimit",
+    "name": "setBaseURI",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -100,13 +277,27 @@ var premint_contract = new caver.klay.Contract([
   },
   {
     "constant": true,
-    "inputs": [
+    "inputs": [],
+    "name": "paused",
+    "outputs": [
       {
         "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "tokenId",
         "type": "uint256"
       }
     ],
-    "name": "users",
+    "name": "ownerOf",
     "outputs": [
       {
         "name": "",
@@ -119,41 +310,36 @@ var premint_contract = new caver.klay.Contract([
   },
   {
     "constant": true,
-    "inputs": [
+    "inputs": [],
+    "name": "baseURI",
+    "outputs": [
       {
         "name": "",
         "type": "string"
       }
     ],
-    "name": "codeCounts",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
     "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "constant": true,
+    "constant": false,
     "inputs": [],
-    "name": "mintPrice",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "name": "renouncePauser",
+    "outputs": [],
     "payable": false,
-    "stateMutability": "view",
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "constant": true,
-    "inputs": [],
-    "name": "usersCount",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "balanceOf",
     "outputs": [
       {
         "name": "",
@@ -177,18 +363,23 @@ var premint_contract = new caver.klay.Contract([
     "constant": false,
     "inputs": [
       {
-        "name": "count",
-        "type": "uint256"
-      },
-      {
-        "name": "code",
-        "type": "string"
+        "name": "account",
+        "type": "address"
       }
     ],
-    "name": "mint",
+    "name": "addPauser",
     "outputs": [],
-    "payable": true,
-    "stateMutability": "payable",
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "pause",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -222,7 +413,395 @@ var premint_contract = new caver.klay.Contract([
   {
     "constant": true,
     "inputs": [],
-    "name": "maxCount",
+    "name": "symbol",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "addMinter",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceMinter",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "approved",
+        "type": "bool"
+      }
+    ],
+    "name": "setApprovalForAll",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "isMinter",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "tos",
+        "type": "address[]"
+      },
+      {
+        "name": "ids",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "transferMany",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "__symbol",
+        "type": "string"
+      }
+    ],
+    "name": "setSymbol",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      },
+      {
+        "name": "_data",
+        "type": "bytes"
+      }
+    ],
+    "name": "safeTransferFrom",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "__name",
+        "type": "string"
+      }
+    ],
+    "name": "setName",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "tokenURI",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "name": "operator",
+        "type": "address"
+      }
+    ],
+    "name": "isApprovedForAll",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "Paused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "Unpaused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "PauserAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "PauserRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "MinterAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "MinterRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "from",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "Transfer",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "approved",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "name": "Approval",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "operator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "approved",
+        "type": "bool"
+      }
+    ],
+    "name": "ApprovalForAll",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  }
+], "0xF967431fb8F5B4767567854dE5448D2EdC21a482");
+
+var mint_contract = new caver.klay.Contract([
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_limit",
+        "type": "uint256"
+      }
+    ],
+    "name": "setLimit",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "nft",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "mintPrice",
     "outputs": [
       {
         "name": "",
@@ -235,16 +814,53 @@ var premint_contract = new caver.klay.Contract([
   },
   {
     "constant": false,
-    "inputs": [
-      {
-        "name": "_maxCount",
-        "type": "uint256"
-      }
-    ],
-    "name": "setMaxCount",
+    "inputs": [],
+    "name": "renounceOwnership",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "isOwner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "name": "mint",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -255,58 +871,6 @@ var premint_contract = new caver.klay.Contract([
       {
         "name": "",
         "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "codesCount",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "codes",
-    "outputs": [
-      {
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "name": "codeUsers",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
       }
     ],
     "payable": false,
@@ -342,6 +906,17 @@ var premint_contract = new caver.klay.Contract([
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "name": "_nft",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -358,59 +933,23 @@ var premint_contract = new caver.klay.Contract([
     "name": "OwnershipTransferred",
     "type": "event"
   }
-], "0x9362d5C13dBC079443b4F91853EA886C648D8670");
+], "0x429dc5488A8BBFa017c6F52528A16E0D2c02F57e");
 
-async function get_premint_balance() {
-  $("#total_minting_count").text(await premint_contract.methods.totalSupply().call());
-  $("#minting_count").text(await premint_contract.methods.balances(wallet_address).call());
+async function get_mint_balance() {
+  $("#remains_minting_count").text(await mint_contract.methods.limit().call());
+  $("#minting_count").text(await kongz_contract.methods.balanceOf(wallet_address).call());
 }
 
-async function premint() {
-  if (await premint_contract.methods.limit().call() === "0") {
-    alert("사전 민팅 진행중이 아닙니다.");
+async function mint() {
+  if (await mint_contract.methods.limit().call() === "0") {
+    alert("민팅 진행중이 아닙니다.");
   } else {
     var count = parseInt($("#countInput").val());
     count = isNaN(count) === true ? 1 : count;
-    await premint_contract.methods.mint(count, $("#codeInput").val()).send({ from: wallet_address, gas: 1500000, value: (65 * count) + "000000000000000000" });
+    await mint_contract.methods.mint(count).send({ from: wallet_address, gas: 1500000, value: (70 * count) + "000000000000000000" });
     setTimeout(() => {
-      alert("사전 민팅이 완료되었습니다.");
+      alert("민팅이 완료되었습니다. 오픈씨에서 확인하세요.");
       location.reload();
     }, 2000);
   }
-}
-
-async function make_code() {
-  var code = prompt("원하는 코드를 입력하세요.");
-  var user = await premint_contract.methods.codeUsers(code).call();
-  if (user !== "0x0000000000000000000000000000000000000000") {
-    alert("해당 코드는 이미 사용중입니다. 다른 코드를 입력하세요.");
-  } else {
-    await premint_contract.methods.makeCode(code).send({ from: wallet_address, gas: 1500000 });
-    setTimeout(() => {
-      alert("코드 [" + code + "]가 생성됩니다. 다른 사람들이 당신의 추천인 코드로 사전 민팅을 수행하면 최대 50명까지 특수 NFT를 증정합니다.");
-      location.reload();
-    }, 2000);
-  }
-}
-
-async function get_ranking() {
-  var codesCount = parseInt(await premint_contract.methods.codesCount().call());
-  var promises = [];
-  var data = [];
-  for (var i = 0; i < codesCount; i += 1) {
-    promises.push(new Promise(async (resolve) => {
-      var code = await premint_contract.methods.codes(i).call();
-      var user = await premint_contract.methods.codeUsers(code).call();
-      var count = await premint_contract.methods.codeCounts(code).call();
-      data.push({code, user, count: parseInt(count)});
-      resolve();
-    }));
-  }
-  await Promise.all(promises);
-  data.sort((a, b) => b.count - a.count);
-  for (var i = 0; i < data.length; i += 1) {
-    var d = data[i];
-    $("#list").append("<tr><td>" + (i + 1) + "</td><td>" + d.code + "</td><td>" + d.user + "</td><td>" + d.count + "</td></tr>");
-  }
-  $("#loading").remove();
 }
