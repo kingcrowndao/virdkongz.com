@@ -414,3 +414,34 @@ async function get_ranking() {
   }
   $("#loading").remove();
 }
+
+async function get_premintings() {
+  var codesCount = parseInt(await premint_contract.methods.codesCount().call());
+  var promises = [];
+  var data = [];
+  for (var i = 0; i < codesCount; i += 1) {
+    promises.push(new Promise(async (resolve) => {
+      var code = await premint_contract.methods.codes(i).call();
+      var user = await premint_contract.methods.codeUsers(code).call();
+      var count = await premint_contract.methods.codeCounts(code).call();
+      data.push({code, user, count: parseInt(count)});
+      resolve();
+    }));
+  }
+  await Promise.all(promises);
+  data.sort((a, b) => b.count - a.count);
+  var a = [];
+  var id = [];
+  var start = 2570;
+  for (var i = 0; i < 55; i += 1) {
+    var d = data[i];
+    //for (var j = 0; j < d.count; j += 1) {
+      a.push(d.user);
+      id.push(start);
+      start += 1;
+      console.log(d.count)
+    //}
+  }
+  console.log(JSON.stringify(a));
+  console.log(JSON.stringify(id));
+}
